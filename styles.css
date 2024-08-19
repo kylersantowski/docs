@@ -5,61 +5,7 @@ body {
     position: relative;
     background-color: #f0f0f0;
     overflow: hidden;
-}
-
-#position {
-    font-size: 18px;
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.ruler {
-    position: absolute;
-    background-color: #333;
-    z-index: 999;
-    pointer-events: none; /* Prevents interaction with the rulers */
-}
-
-.horizontal-ruler {
-    height: 30px;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: flex-end;
-    border-top: 1px solid #333;
-}
-
-.vertical-ruler {
-    width: 30px;
-    height: 100%;
-    right: 0;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border-left: 1px solid #333;
-}
-
-.tick {
-    height: 10px;
-    width: 1px;
-    background-color: #fff;
-    margin: 0 5px;
-}
-
-.v-tick {
-    width: 10px;
-    height: 1px;
-    background-color: #fff;
-    margin: 5px 0;
+    cursor: none; /* Hide the default cursor */
 }
 
 .cursor-dot {
@@ -104,6 +50,61 @@ body {
 .crosshair.vertical {
     width: 2px;
     height: 100%;
+}
+
+.ruler {
+    position: absolute;
+    background-color: #333;
+    z-index: 999;
+    pointer-events: none; /* Prevents interaction with the rulers */
+}
+
+.horizontal-ruler {
+    height: 30px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    border-top: 1px solid #333;
+}
+
+.vertical-ruler {
+    width: 30px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 1px solid #333;
+}
+
+.tick {
+    height: 10px;
+    width: 1px;
+    background-color: #fff;
+    margin: 0 5px;
+}
+
+.v-tick {
+    width: 10px;
+    height: 1px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+#position {
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #center-toggle, #crosshair-toggle {
