@@ -34,6 +34,7 @@ body {
     left: 0;
     display: flex;
     align-items: flex-end;
+    border-top: 1px solid #333;
 }
 
 .vertical-ruler {
@@ -44,6 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    border-left: 1px solid #333;
 }
 
 .tick {
@@ -60,17 +62,14 @@ body {
     margin: 5px 0;
 }
 
-.tick-label {
-    color: #fff;
-    font-size: 12px;
-    text-align: center;
-}
-
-.v-tick-label {
-    color: #fff;
-    font-size: 12px;
-    text-align: right;
-    margin-right: 5px;
+.cursor-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
 }
 
 .cursor-line {
@@ -89,6 +88,22 @@ body {
     width: 30px;
     height: 2px;
     left: calc(100% - 30px);
+}
+
+.crosshair {
+    position: absolute;
+    background-color: blue;
+    z-index: 1000;
+}
+
+.crosshair.horizontal {
+    height: 2px;
+    width: 100%;
+}
+
+.crosshair.vertical {
+    width: 2px;
+    height: 100%;
 }
 
 #center-toggle, #crosshair-toggle {
@@ -110,20 +125,4 @@ body {
 #crosshair-toggle {
     top: 50px;
     left: 10px;
-}
-
-.crosshair {
-    position: absolute;
-    background-color: blue;
-    z-index: 1000;
-}
-
-.crosshair.horizontal {
-    height: 2px;
-    width: 100%;
-}
-
-.crosshair.vertical {
-    width: 2px;
-    height: 100%;
 }
