@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+#position {
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.ruler {
+    position: absolute;
+    background-color: #333;
+    z-index: 999;
+    pointer-events: none; /* Prevents interaction with the rulers */
+}
+
+.horizontal-ruler {
+    height: 30px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.vertical-ruler {
+    width: 30px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.tick {
+    height: 10px;
+    width: 1px;
+    background-color: #fff;
+    margin: 0 5px;
+}
+
+.v-tick {
+    width: 10px;
+    height: 1px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+.tick-label {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+
+.v-tick-label {
+    color: #fff;
+    font-size: 12px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.cursor-line {
+    position: absolute;
+    background-color: red;
+    z-index: 1000;
+}
+
+.cursor-line.horizontal {
+    height: 30px;
+    width: 2px;
+    top: calc(100% - 30px);
+}
+
+.cursor-line.vertical {
+    width: 30px;
+    height: 2px;
+    left: calc(100% - 30px);
+}
+
+#center-toggle, #crosshair-toggle {
+    position: fixed;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Ensure buttons are on top of other elements */
+}
+
+#center-toggle {
+    top: 10px;
+    left: 10px;
+}
+
+#crosshair-toggle {
+    top: 50px;
+    left: 10px;
+}
+
+.crosshair {
+    position: absolute;
+    background-color: blue;
+    z-index: 1000;
+}
+
+.crosshair.horizontal {
+    height: 2px;
+    width: 100%;
+}
+
+.crosshair.vertical {
+    width: 2px;
+    height: 100%;
+}
