@@ -84,14 +84,26 @@ body {
     height: 10px;
     width: 1px;
     background-color: #fff;
-    margin: 0 5px;
+    margin: 0 1px;
 }
 
 .v-tick {
     width: 10px;
     height: 1px;
     background-color: #fff;
-    margin: 5px 0;
+    margin: 1px 0;
+}
+
+.tick-thick {
+    height: 15px;
+    width: 2px;
+    background-color: #fff;
+}
+
+.v-tick-thick {
+    width: 15px;
+    height: 2px;
+    background-color: #fff;
 }
 
 #position {
