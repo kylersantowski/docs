@@ -30,26 +30,29 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function addTicks() {
-        // Remove existing ticks
-        document.querySelectorAll('.tick, .v-tick').forEach(tick => tick.remove());
+function addTicks() {
+    // Remove existing ticks
+    document.querySelectorAll('.tick, .v-tick').forEach(tick => tick.remove());
 
-        // Add horizontal ticks
-        for (let i = 0; i < window.innerWidth; i += 50) {
-            const tick = document.createElement('div');
-            tick.className = 'tick';
-            tick.style.left = `${i}px`;
-            horizontalRuler.appendChild(tick);
-        }
-
-        // Add vertical ticks
-        for (let i = 0; i < window.innerHeight; i += 50) {
-            const tick = document.createElement('div');
-            tick.className = 'v-tick';
-            tick.style.top = `${i}px`;
-            verticalRuler.appendChild(tick);
-        }
+    // Add horizontal ticks
+    for (let i = 0; i < window.innerWidth; i += 10) {
+        const tick = document.createElement('div');
+        tick.className = i % 100 === 0 ? 'tick tick-thick' : 'tick';
+        tick.style.left = `${i}px`;
+        horizontalRuler.appendChild(tick);
     }
+
+    // Add vertical ticks
+    for (let i = 0; i < window.innerHeight; i += 10) {
+        const tick = document.createElement('div');
+        tick.className = i % 100 === 0 ? 'v-tick v-tick-thick' : 'v-tick';
+        tick.style.top = `${i}px`;
+        verticalRuler.appendChild(tick);
+    }
+}
+
+addTicks(); // Initial ticks
+window.addEventListener('resize', addTicks); // Update ticks on resize
 
     centerToggle.addEventListener('click', function() {
         centerZero = !centerZero;
